@@ -3,7 +3,6 @@ import json
 
 class item:
     def __init__(self, root: Frame, name: str, description: str, pinned: bool, completed: bool) -> None:
-        self.data: dict[str, bool | str | None] = []
         self.root = root
         self.name: str = name
         self.desc: str = description
@@ -16,4 +15,8 @@ class item:
     
 
     def generator(self):
-        self.created: Frame = Frame(self.root)
+        ...
+    
+
+    def template(self):
+        ...
