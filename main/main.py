@@ -12,7 +12,7 @@ except JSONDecodeError:
 
 
 class maker:
-    def __init__(self, root):
+    def __init__(self, root: Tk):
         self.items: list[Frame] = []
         self.name: str
         self.desc: str
@@ -25,7 +25,11 @@ class maker:
     def unpacker(self, data: list):
         for item in data:
             if item.is_dummy: return
-            self.name = item.
+            self.name = item.name
+            self.desc = item.description
+            self.pinned = item.pinned
+            self.comp = item.completed
+            self.is_dummy = item.is_dummy
     
 
     def maker(self):
@@ -34,8 +38,19 @@ class maker:
         self.items.append(current_item)
 
 
-root: Tk = Tk()
-root.title("todo list")
-root.geometry("300x440")
+    def run(self, data: list):
+        self.unpacker(data)
+        self.maker()
 
+def window_maker(data):
+    root: Tk = Tk()
+    root.title("todo list")
+    root.geometry("300x440")
+
+
+def main():
+    
+
+
+if __name__ == "__main__":
 
