@@ -42,15 +42,19 @@ class maker:
         self.unpacker(data)
         self.maker()
 
-def window_maker(data):
+def window_maker():
     root: Tk = Tk()
     root.title("todo list")
     root.geometry("300x440")
+    return root
 
 
 def main():
+    root: Tk = window_maker()
+    app: maker = maker()
+
     
 
 
 if __name__ == "__main__":
-
+    main()
