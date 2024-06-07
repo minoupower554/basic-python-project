@@ -49,12 +49,11 @@ def window_maker():
     return root
 
 
-def main():
+def main(): 
     root: Tk = window_maker()
-    app: maker = maker()
+    app: maker = maker(root)
+    app.run()
 
-    
 
-
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
